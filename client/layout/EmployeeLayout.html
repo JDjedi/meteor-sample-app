@@ -1,0 +1,26 @@
+
+<template name='EmployeeLayout'>
+	<nav class="col-12" id="navbar">
+		<li>
+			{{> loginButtons}}
+		</li>
+		<li>
+			<a href="/">Home</a>
+		</li>
+		<li>
+			<a href="/about">About</a>
+		</li>
+		<li>
+			<a href="/interests">Interests</a>
+		</li>
+		<li>
+			<a href="/employee_log">Employee log</a>
+		</li>
+	</nav>
+
+	<main>
+		{{> yield "employee"}}
+	</main>
+</template>
+
+

@@ -1,0 +1,40 @@
+
+<template name="employeeListTemplate">
+	<head>
+		<title>SampleApp - Employee Log</title>
+	</head>
+
+	<body>
+		<div class="col-2"></div>
+		<div class="col-9">
+			<p>Time for a list!</p>
+			<p> ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+			<br>
+			{{> employeeDataInput}}
+			<br>
+			{{> employeeDataList}}
+			<div class="col-1"></div>
+		</div>
+	</body>
+</template>
+
+<template name="employeeDataInput">
+	<form>
+		<p>Name</p><input type="text" name="name">
+		<p>Skill</p><input type="text" name="skill">
+		<p>Rating</p><input type="text" name="rating">
+		<br>
+		<input type="submit" value="Add Log">
+	</form>
+</template>
+
+<template name="employeeDataList">
+	<div class="employe-data-list">
+		<p>Hello World!</p>
+	</div>
+</template>
