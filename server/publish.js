@@ -1,3 +1,7 @@
-Meteor.publish('Employee', function() {
-	return Lists.find({name: this.userId});
-})
+import { Meteor } from 'meteor/meteor';
+
+Meteor.publish('employees', function() {
+	return Employees.find({});
+});
+
+	

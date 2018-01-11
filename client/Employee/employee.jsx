@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
 import { render } from 'react-dom';
@@ -8,7 +9,7 @@ Meteor.subscribe('employees');
 
 Template.employeeDataList.helpers({
 	employeeList: function(){
-		return Employees.find({});
+		return Employees.find({}).fetch();
 	}
 });
 
@@ -23,5 +24,9 @@ Template.employeeDataInput.events({
 			name: employeeNameVar,
 			attributes: { skill: employeeSkillVar, rating: employeeRatingVar }
 		});
+
+		console.log(Employees.find({}).fetch());
 	}
 });
+
+
