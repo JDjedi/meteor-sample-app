@@ -1,6 +1,7 @@
 
 Router.route('/', function() {
 	this.render('index', {to: 'main'});
+	GAnalytics.pageview(); //google analytics
 });
 
 Router.route('/about', function() {

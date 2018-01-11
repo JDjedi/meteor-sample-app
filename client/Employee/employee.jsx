@@ -6,11 +6,11 @@ import './employee.html';
 
 Meteor.subscribe('employees');
 
-// Template.employeeLog.helpers({
-//   info: function() {
-//   	return employees.find({});
-//   },
-// });
+Template.employeeDataList.helpers({
+	employeeList: function(){
+		return Employees.find({});
+	}
+});
 
 Template.employeeDataInput.events({
 	'submit form': function(event){
@@ -18,10 +18,6 @@ Template.employeeDataInput.events({
 		var employeeNameVar = event.target.name.value;
 		var employeeSkillVar = event.target.skill.value;
 		var employeeRatingVar = event.target.rating.value;
-
-		console.log(employeeNameVar);
-		console.log(employeeSkillVar);
-		console.log(employeeRatingVar);
 
 		Employees.insert({
 			name: employeeNameVar,

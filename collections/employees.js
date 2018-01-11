@@ -16,7 +16,7 @@ AttributeSchema = new SimpleSchema({ //not submitting on the other page, must fi
 	}
 });
 
-Employees.allow({
+Employees.allow({ //only a regestered user may enter
 	insert: function(userId, doc) {
 		return !!userId;
 	}

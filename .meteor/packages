@@ -37,6 +37,7 @@ raix:handlebar-helpers
 matb33:bootstrap-glyphicons
 zimme:active-route
 gwendall:auth-client-callbacks
+datariot:ganalytics
 
 
 aldeed:collection2-core@2.0.1
