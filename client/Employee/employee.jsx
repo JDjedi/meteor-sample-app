@@ -25,7 +25,7 @@ Template.employeeDataInput.events({
 			attributes: { skill: employeeSkillVar, rating: employeeRatingVar }
 		});
 
-		console.log(Employees.find({}).fetch());
+		//console.log(Employees.find({}).fetch());
 	}
 });
 

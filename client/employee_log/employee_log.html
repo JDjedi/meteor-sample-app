@@ -1,0 +1,23 @@
+
+
+<template name="employeeLogTemplate">
+	<div class="col-2"></div>
+	<div class="col-10">
+	  <head>
+	    <title>SampleApp - Employee Log</title>
+	  </head>
+
+	  <body>
+	    <p>Welcome to Employee Log!</p>
+			<ul>
+			  {{#each employeelist}}
+			    <li>
+			      <div>{{name}}</div>
+			    </li>
+			  {{/each}}
+			</ul>
+	  </body>
+	</div>
+  
+</template>
+

@@ -12,8 +12,12 @@ Router.route('/interests', function() {
 	this.render('interests', {to: 'main'});
 });
 
-Router.route('/employee_log', function() {
+Router.route('/employee', function() {
 	this.render('employeeListTemplate', {to: 'main'});
+});
+
+Router.route('/employee_log', function() {
+	this.render('employeeLogTemplate', {to: 'main'});
 });
 
 Router.configure({ //used to make a default template for all routes
