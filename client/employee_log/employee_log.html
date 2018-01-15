@@ -8,16 +8,24 @@
 	  </head>
 
 	  <body>
-	    <p>Welcome to Employee Log!</p>
-			<ul>
-			  {{#each employeelist}}
-			    <li>
-			      <div>{{name}}</div>
-			    </li>
-			  {{/each}}
-			</ul>
+	    <p>Welcome to the Employee List Log!</p>
+	    {{> list}}
 	  </body>
 	</div>
   
+</template>
+
+<template name="list">
+	{{#if Template.subscriptionsReady}}
+		<ul>
+		  {{#each employeeList}}
+		    <li>
+		    	{{name}} - {{attributes.skill}}: {{attributes.rating}}
+		    </li>
+		  {{/each}}
+		</ul>
+	{{else}}
+		<p>Loading...</p>
+	{{/if}}
 </template>
 
