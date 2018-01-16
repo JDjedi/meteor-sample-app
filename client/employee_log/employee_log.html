@@ -4,7 +4,7 @@
 	<div class="col-2"></div>
 	<div class="col-10">
 	  <head>
-	    <title>SampleApp - Employee Log</title>
+	    <title>SampleApp - Employee Log: Listing</title>
 	  </head>
 
 	  <body>
@@ -20,7 +20,7 @@
 		<ul>
 		  {{#each employeeList}}
 		    <li>
-		    	{{name}} - {{attributes.skill}}: {{attributes.rating}}
+		    	{{name}} <a href="/employee/{{_id}}">View Details</a>
 		    </li>
 		  {{/each}}
 		</ul>
