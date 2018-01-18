@@ -25,8 +25,8 @@ Router.configure({ //used to make a default template for all routes
 });
 
 Router.route('/employee/:_id', function () {
-	var params = this.params; // { _id: "5" }
-  var id = params._id; // "5"
-	this.render('EmployeeDetail', {to: 'main'});
+	this.render('EmployeeDetail', {
+		to: 'main'
+	});
 });
 

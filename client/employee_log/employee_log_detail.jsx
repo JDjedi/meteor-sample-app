@@ -18,7 +18,8 @@ if (Meteor.isClient) {
 
 	Template.EmployeeDetail.helpers({
 		employee: function(){
-			return Employees.findOne({id});
+			return Employees.findOne({_id: Router.current().params._id});
 		}
 	});
 };
+
