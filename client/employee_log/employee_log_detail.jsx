@@ -21,5 +21,13 @@ if (Meteor.isClient) {
 			return Employees.findOne({_id: Router.current().params._id});
 		}
 	});
+
+	Template.SkillAndRatingList.helpers({
+
+		employeeAttributes: function(){
+			var list = Employees.findOne({_id: Router.current().params._id});
+			return list.attributes;
+		}
+	});
 };
 

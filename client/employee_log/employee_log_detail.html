@@ -10,9 +10,23 @@
 		<body>
 			<h1>Employee Detail Log</h1>
 			<h3>{{employee.name}}</h3>
-			<p>{{employee.attributes.skill}}: {{employee.attributes.rating}}</p>
+			{{> SkillAndRatingList}}
 		</body>
 	</div>
 	<div class="col-1">
 	</div>
+</template>
+
+<template name="SkillAndRatingList">
+	{{#if Template.subscriptionsReady}}
+		<ul>
+		  {{#each employeeAttributes}}
+		    <li>
+		    	{{skill}}: {{rating}}
+		    </li>
+		  {{/each}}
+		</ul>
+	{{else}}
+		<p>Loading...</p>
+	{{/if}}
 </template>

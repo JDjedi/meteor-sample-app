@@ -8,7 +8,8 @@
 		<div class="col-2"></div>
 		<div class="col-9">
 			<br>
-			{{> employeeDataInput }}
+			<!-- {{> employeeDataInput }} --> <!-- old manual way of doing this, see below -->
+			{{> quickForm collection="Employees" id="insertEmployeeFrom" type="insert" class="new-employee-from"}}
 		</div>
 		<div class="col-1"></div>
 	</body>

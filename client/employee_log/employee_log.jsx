@@ -24,4 +24,3 @@ if (Meteor.isClient) {
 };
 
 
-//up next notes:proceed to next vid and figure out how to only display emp log to signed in users
