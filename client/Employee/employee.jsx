@@ -7,12 +7,6 @@ import './employee.html';
 
 Meteor.subscribe('employees');
 
-Template.employeeDataList.helpers({
-	employeeList: function(){
-		return Employees.find({}).fetch();
-	}
-});
-
 Template.employeeDataInput.events({
 	'submit form': function(event){
 		event.preventDefault();
