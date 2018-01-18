@@ -1,7 +1,9 @@
 
 Router.route('/', function() {
 	this.render('index', {to: 'main'});
-	//GAnalytics.pageview(); //google analytics
+	// if(Meteor.userId()) { //if user is logged in the homepage will redirect to the employee entry log page
+	// 	this.redirect('/employee')
+	// }
 });
 
 Router.route('/about', function() {
@@ -14,19 +16,29 @@ Router.route('/interests', function() {
 
 Router.route('/employee', function() {
 	this.render('employeeListTemplate', {to: 'main'});
+	if(!Meteor.userId()) { //if user is not logged the client will be redirected to /home
+		this.redirect('/')
+	}
 });
 
 Router.route('/employee_log', function() {
 	this.render('employeeLogTemplate', {to: 'main'});
-});
-
-Router.configure({ //used to make a default template for all routes
-	layoutTemplate: 'ApplicationLayout'
+	if(!Meteor.userId()) { 
+		this.redirect('/')
+	}
 });
 
 Router.route('/employee/:_id', function () {
 	this.render('EmployeeDetail', {
 		to: 'main'
 	});
+	if(!Meteor.userId()) { 
+		this.redirect('/')
+	}
 });
+
+Router.configure({ //used to make a default template for all routes
+	layoutTemplate: 'ApplicationLayout'
+});
+
 

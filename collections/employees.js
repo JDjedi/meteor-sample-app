@@ -4,18 +4,6 @@ SimpleSchema.extendOptions(['autoform']);
 
 Employees = new Mongo.Collection('employees');
 
-// AttributeSchema = new SimpleSchema({ //old manual way of doing things
-// 	skill: {
-// 		type: String,
-// 		label: "Skill"
-// 	},
-
-// 	rating: {
-// 		type: Number,
-// 		label: "Rating"
-// 	}
-// });
-
 Employees.allow({ //only a regestered user may enter
 	insert: function(userId, doc) {
 		return !!userId;
@@ -65,6 +53,19 @@ EmployeeSchema = new SimpleSchema({
   "attributes.$.rating": Number
 
 });
+
+// AttributeSchema = new SimpleSchema({ //old manual way of doing things
+// 	skill: {
+// 		type: String,
+// 		label: "Skill"
+// 	},
+
+// 	rating: {
+// 		type: Number,
+// 		label: "Rating"
+// 	}
+// });
+
 
 Employees.attachSchema(EmployeeSchema);
 

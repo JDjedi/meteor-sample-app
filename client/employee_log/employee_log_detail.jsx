@@ -12,7 +12,8 @@ if (Meteor.isClient) {
 	Template.EmployeeDetail.onCreated(function() {
 		var self = this;
 		self.autorun(function() {
-			self.subscribe('employees');
+			var id = Employees.findOne({_id: Router.current().params._id}); //communicates with publish.js to ensure only one emp. is loaded per detail view
+			self.subscribe('singleEmployee', id);
 		})
 	});
 
@@ -23,10 +24,9 @@ if (Meteor.isClient) {
 	});
 
 	Template.SkillAndRatingList.helpers({
-
 		employeeAttributes: function(){
-			var list = Employees.findOne({_id: Router.current().params._id});
-			return list.attributes;
+			var id = Employees.findOne({_id: Router.current().params._id});
+			return id.attributes;
 		}
 	});
 };
