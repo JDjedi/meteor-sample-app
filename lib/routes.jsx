@@ -1,4 +1,14 @@
 
+if (Meteor.isClient) {
+	Accounts.onLogin(function() {
+		this.redirect('/employee')
+	});
+
+	Accounts.onLogout(function() {
+		this.redirect('/')
+	});
+}
+
 Router.route('/', function() {
 	this.render('index', {to: 'main'});
 	// if(Meteor.userId()) { //if user is logged in the homepage will redirect to the employee entry log page

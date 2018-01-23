@@ -7,6 +7,9 @@ Employees = new Mongo.Collection('employees');
 Employees.allow({ //only a regestered user may enter
 	insert: function(userId, doc) {
 		return !!userId;
+	},
+	update: function(userId, doc) {
+		return !!userId;
 	}
 });
 
@@ -16,7 +19,7 @@ EmployeeSchema = new SimpleSchema({
 		label: "Name"
 	},
 
-	mainLog: {
+	scheduleLog: {
 		type: Boolean,
 		defaultValue: false,
 		optional: true,
@@ -51,8 +54,18 @@ EmployeeSchema = new SimpleSchema({
 	"attributes.$": Object,
   "attributes.$.skill": String,
   "attributes.$.rating": Number
-
 });
+
+Meteor.methods({
+	toggleMenuItem: function(id, currentState) {
+		Employees.update(id, {
+			$set: {
+				scheduleLog: !currentState
+			}
+		});
+	}
+});
+
 
 // AttributeSchema = new SimpleSchema({ //old manual way of doing things
 // 	skill: {

@@ -21,6 +21,11 @@
 		  {{#each employeeList}}
 		    <li>
 		    	{{name}} <a href="/employee/{{_id}}">View Details</a>
+		    	<br>
+		    	<div>
+			    	<button class="btn-primary toggle-menu">Add</button> 
+			    	<button class="btn-deny toggle-menu">Remove</button>
+		    	</div>
 		    </li>
 		  {{/each}}
 		</ul>

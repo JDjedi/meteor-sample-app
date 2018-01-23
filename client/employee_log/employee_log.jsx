@@ -21,6 +21,12 @@ if (Meteor.isClient) {
 			self.subscribe('employees');
 		})
 	});
+
+	Template.list.events({
+		'click .toggle-menu': function() {
+			Meteor.call('toggleMenuItem', this._id, this.scheduleLog);
+		}
+	});
 };
 
 
