@@ -1,0 +1,43 @@
+<template name="employeeSchedule">
+	<div class="col-2">
+	</div>
+	<div class="col-9">
+	  <head>
+	    <title>SampleApp - Employee Schedule</title>
+	  </head>
+
+	  <body>
+	    <h1>Welcome to the employee schedule!</h1>
+	    <h2>Employees on the current schedule...</h2>
+	    {{> schedule}}
+	  </body>
+	</div>
+	<div class="col-1">
+	</div>
+</template>
+
+
+<template name="schedule">
+	{{#if Template.subscriptionsReady}}
+		<ul>
+		  {{#each employeeList}}
+		    <li>
+		    	{{name}} <a href="/employee/{{_id}}">View Details</a>
+<!-- 		    	<div>
+		    		{{#if scheduleLog}}
+		    			<button class="btn-deny toggle-menu">Remove</button>
+			    	{{else}}
+			    		<button class="btn-primary toggle-menu">Add</button>
+			    	{{/if}}		    		
+		    	</div> -->
+		    </li>
+		  {{else}}
+		  	<h4>No employees on the current schedule!</h4>
+		  	<h4>Please <a href="/employee_log">add</a> some.</h4>
+		  {{/each}}
+		</ul>
+	{{else}}
+		<p>Loading...</p>
+	{{/if}}
+
+</template>

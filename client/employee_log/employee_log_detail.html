@@ -10,9 +10,14 @@
 		<body>
 			<h1>Employee Detail Log</h1>
 			<h3>{{employee.name}}</h3>
-			<button class="btn-primary toggle-menu">Add</button>
-			<button class="btn-deny toggle-menu">Remove</button>
 			{{> SkillAndRatingList}}
+    	<div>
+    		{{#if scheduleLog}}
+    			<button class="btn-deny toggle-menu">Remove</button>
+	    	{{else}}
+	    		<button class="btn-primary toggle-menu">Add</button>
+	    	{{/if}}
+    	</div>
 		</body>
 	</div>
 	<div class="col-1">

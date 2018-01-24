@@ -1,6 +1,6 @@
 
 
-<template name="employeeLogTemplate">
+<template name="employeeLogList">
 	<div class="col-2"></div>
 	<div class="col-10">
 	  <head>
@@ -23,8 +23,11 @@
 		    	{{name}} <a href="/employee/{{_id}}">View Details</a>
 		    	<br>
 		    	<div>
-			    	<button class="btn-primary toggle-menu">Add</button> 
-			    	<button class="btn-deny toggle-menu">Remove</button>
+		    		{{#if scheduleLog}}
+		    			<button class="btn-deny toggle-menu">Remove</button>
+			    	{{else}}
+			    		<button class="btn-primary toggle-menu">Add</button>
+			    	{{/if}}
 		    	</div>
 		    </li>
 		  {{/each}}
@@ -32,5 +35,6 @@
 	{{else}}
 		<p>Loading...</p>
 	{{/if}}
+
 </template>
 

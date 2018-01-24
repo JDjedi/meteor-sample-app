@@ -25,14 +25,14 @@ Router.route('/interests', function() {
 });
 
 Router.route('/employee', function() {
-	this.render('employeeListTemplate', {to: 'main'});
+	this.render('employeeLogEntry', {to: 'main'});
 	if(!Meteor.userId()) { //if user is not logged the client will be redirected to /home
 		this.redirect('/')
 	}
 });
 
 Router.route('/employee_log', function() {
-	this.render('employeeLogTemplate', {to: 'main'});
+	this.render('employeeLogList', {to: 'main'});
 	if(!Meteor.userId()) { 
 		this.redirect('/')
 	}
@@ -43,6 +43,13 @@ Router.route('/employee/:_id', function () {
 		to: 'main'
 	});
 	if(!Meteor.userId()) { 
+		this.redirect('/')
+	}
+});
+
+Router.route('/employee_schedule', function() {
+	this.render('employeeSchedule', {to: 'main'});
+	if(!Meteor.userId()) { //if user is not logged the client will be redirected to /home
 		this.redirect('/')
 	}
 });
