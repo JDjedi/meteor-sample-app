@@ -23,19 +23,19 @@ if (Meteor.isClient) {
 		}
 	});
 
-	Template.SkillAndRatingList.helpers({
-		employeeAttributes: function(){
-			var id = Employees.findOne({_id: Router.current().params._id});
-			
-			return id.attributes;
-		}
-	});
-
 	Template.EmployeeDetail.events({
 		'click .toggle-menu': function() {
 			var id = Employees.findOne({_id: Router.current().params._id});
 
 			Meteor.call('toggleMenuItem', id, id.scheduleLog);
+		}
+	});
+
+	Template.SkillAndRatingList.helpers({
+		employeeAttributes: function(){
+			var id = Employees.findOne({_id: Router.current().params._id});
+			
+			return id.attributes;
 		}
 	});
 };

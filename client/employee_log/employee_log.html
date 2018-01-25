@@ -20,16 +20,23 @@
 		<ul>
 		  {{#each employeeList}}
 		    <li>
-		    	{{name}} <a href="/employee/{{_id}}">View Details</a>
-		    	<br>
+		    	<div>
+		    		<h2>{{name}}</h2>
+		    		<a href="/employee/{{_id}}">View Details</a>
+		    	</div>
 		    	<div>
 		    		{{#if scheduleLog}}
-		    			<button class="btn-deny toggle-menu">Remove</button>
+		    			<button class="btn-deny toggle-menu">Remove from schedule</button>
 			    	{{else}}
-			    		<button class="btn-primary toggle-menu">Add</button>
+			    		<button class="btn-primary toggle-menu">Add to schedule</button>
 			    	{{/if}}
 		    	</div>
 		    </li>
+		    {{> quickForm collection="Employees" id=_id type="update" doc=this}}<!-- id must be unique! -->
+		    <br>
+		    <br>
+		    <br>
+		    <br>
 		  {{/each}}
 		</ul>
 	{{else}}

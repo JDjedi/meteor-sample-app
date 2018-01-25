@@ -39,9 +39,7 @@ Router.route('/employee_log', function() {
 });
 
 Router.route('/employee/:_id', function () {
-	this.render('EmployeeDetail', {
-		to: 'main'
-	});
+	this.render('EmployeeDetail', {to: 'main'});
 	if(!Meteor.userId()) { 
 		this.redirect('/')
 	}
@@ -57,5 +55,12 @@ Router.route('/employee_schedule', function() {
 Router.configure({ //used to make a default template for all routes
 	layoutTemplate: 'ApplicationLayout'
 });
+
+
+
+
+
+		
+
 
 

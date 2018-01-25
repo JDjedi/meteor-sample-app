@@ -12,6 +12,10 @@ if (Meteor.isClient) {
 	Template.list.helpers({
 		employeeList: function(){
 			return Employees.find({}).fetch();
+		},
+
+		updateEmployeeId: function(){
+			return Employees.findOne({_id: Router.current().params._id})
 		}
 	});
 
@@ -27,6 +31,7 @@ if (Meteor.isClient) {
 			Meteor.call('toggleMenuItem', this._id, this.scheduleLog);
 		}
 	});
+
 };
 
 
