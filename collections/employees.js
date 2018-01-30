@@ -63,6 +63,9 @@ Meteor.methods({
 				scheduleLog: !currentState
 			}
 		});
+	},
+	deleteEmployee: function(id) {
+		Employees.remove(id);
 	}
 });
 
